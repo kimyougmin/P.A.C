@@ -108,7 +108,7 @@ var locations = [
    ['서천', 36.078969, 126.690395],
    ['부여', 36.262599, 126.846925],
    ['공주', 36.461173, 127.121340],
-   ['계롱', 36.290381, 127.239746],
+   ['계룡', 36.290381, 127.239746],
    ['논산', 36.188499, 127.148128],
    ['금산', 36.111569, 127.485464],
    //충청북도
@@ -180,33 +180,496 @@ var locations = [
    ['제주', 33.499299, 126.513027],
  ];
 
- var map = new google.maps.Map(document.getElementById('map_ma'), {
+ function foundlocation(){
+   var location = document.getElementById("search_box").value;
+   console.log(location);
+  if(locations[0][0] == location){
+    var audio = new Audio('vosound/대표시/부산.mp3');
+    audio.play();
+   }else if(locations[1][0] == location){
+    var audio = new Audio('vosound/대표시/대구.mp3');
+    audio.play();
+   }else if(locations[2][0] == location){
+    var audio = new Audio('vosound/대표시/울산.mp3');
+    audio.play();
+   }else if(locations[3][0] == location){
+    var audio = new Audio('vosound/대표시/광주.mp3');
+    audio.play();
+   }else if(locations[4][0] == location){
+    var audio = new Audio('vosound/대표시/대전.mp3');
+    audio.play();
+   }else if(locations[5][0] == location){
+    var audio = new Audio('vosound/대표시/세종.mp3');
+    audio.play();
+   }else if(locations[6][0] == location){
+    var audio = new Audio('vosound/대표시/서울.mp3');
+    audio.play();
+   }else if(locations[7][0] == location){
+    var audio = new Audio('vosound/대표시/인천.mp3');
+    audio.play();  //대표시
+   }else if(locations[8][0] == location){
+    var audio = new Audio('vosound/경상남도/양산.mp3');
+    audio.play();
+   }else if(locations[9][0] == location){
+    var audio = new Audio('vosound/경상남도/김해.mp3');
+    audio.play();
+   }else if(locations[10][0] == location){
+    var audio = new Audio('vosound/경상남도/밀양.mp3');
+    audio.play();
+   }else if(locations[11][0] == location){
+    var audio = new Audio('vosound/경상남도/창원.mp3');
+    audio.play();
+   }else if(locations[12][0] == location){
+    var audio = new Audio('vosound/경상남도/거제.mp3');
+    audio.play();
+   }else if(locations[13][0] == location){
+    var audio = new Audio('vosound/경상남도/창녕.mp3');
+    audio.play();
+   }else if(locations[14][0] == location){
+    var audio = new Audio('vosound/경상남도/함안.mp3');
+    audio.play();
+   }else if(locations[15][0] == location){
+    var audio = new Audio('vosound/경상남도/의령.mp3');
+    audio.play();
+   }else if(locations[16][0] == location){
+    var audio = new Audio('vosound/경상남도/합천.mp3');
+    audio.play();
+   }else if(locations[17][0] == location){
+    var audio = new Audio('vosound/경상남도/거창.mp3');
+    audio.play();
+   }else if(locations[18][0] == location){
+    var audio = new Audio('vosound/경상남도/함양.mp3');
+    audio.play();
+   }else if(locations[19][0] == location){
+    var audio = new Audio('vosound/경상남도/산청.mp3');
+    audio.play();
+   }else if(locations[20][0] == location){
+    var audio = new Audio('vosound/경상남도/진주.mp3');
+    audio.play();
+   }else if(locations[21][0] == location){
+    var audio = new Audio('vosound/경상남도/하동.mp3');
+    audio.play();
+   }else if(locations[22][0] == location){
+    var audio = new Audio('vosound/경상남도/남해.mp3');
+    audio.play();
+   }else if(locations[23][0] == location){
+    var audio = new Audio('vosound/경상남도/사천.mp3');
+    audio.play();
+   }else if(locations[24][0] == location){
+    var audio = new Audio('vosound/경상남도/고성.mp3');
+    audio.play();
+   }else if(locations[25][0] == location){
+    var audio = new Audio('vosound/경상남도/통영.mp3');
+    audio.play();                   //경상남도
+   }else if(locations[26][0] == location){
+    var audio = new Audio('vosound/경상북도/청도.mp3');
+    audio.play();
+   }else if(locations[27][0] == location){
+    var audio = new Audio('vosound/경상북도/경주.mp3');
+    audio.play();
+   }else if(locations[28][0] == location){
+    var audio = new Audio('vosound/경상북도/경산.mp3');
+    audio.play();
+   }else if(locations[29][0] == location){
+    var audio = new Audio('vosound/경상북도/영천.mp3');
+    audio.play();
+   }else if(locations[30][0] == location){
+    var audio = new Audio('vosound/경상북도/포항.mp3');
+    audio.play();
+   }else if(locations[31][0] == location){
+    var audio = new Audio('vosound/경상북도/청송.mp3');
+    audio.play();
+   }else if(locations[32][0] == location){
+    var audio = new Audio('vosound/경상북도/영덕.mp3');
+    audio.play();
+   }else if(locations[33][0] == location){
+    var audio = new Audio('vosound/경상북도/영양.mp3');
+    audio.play();
+   }else if(locations[34][0] == location){
+    var audio = new Audio('vosound/경상북도/울진.mp3');
+    audio.play();
+   }else if(locations[35][0] == location){
+    var audio = new Audio('vosound/경상북도/봉화.mp3');
+    audio.play();
+   }else if(locations[36][0] == location){
+    var audio = new Audio('vosound/경상북도/안동.mp3');
+    audio.play();
+   }else if(locations[37][0] == location){
+    var audio = new Audio('vosound/경상북도/의성.mp3');
+    audio.play();
+   }else if(locations[38][0] == location){
+    var audio = new Audio('vosound/경상북도/군위.mp3');
+    audio.play();
+   }else if(locations[39][0] == location){
+    var audio = new Audio('vosound/경상북도/칠곡.mp3');
+    audio.play();
+   }else if(locations[40][0] == location){
+    var audio = new Audio('vosound/경상북도/구미.mp3');
+    audio.play();
+   }else if(locations[41][0] == location){
+    var audio = new Audio('vosound/경상북도/성주.mp3');
+    audio.play();
+   }else if(locations[42][0] == location){
+    var audio = new Audio('vosound/경상북도/고령.mp3');
+    audio.play();
+   }else if(locations[43][0] == location){
+    var audio = new Audio('vosound/경상북도/김천.mp3');
+    audio.play();
+   }else if(locations[44][0] == location){
+    var audio = new Audio('vosound/경상북도/상주.mp3');
+    audio.play();
+   }else if(locations[45][0] == location){
+    var audio = new Audio('vosound/경상북도/문경.mp3');
+    audio.play();
+   }else if(locations[46][0] == location){
+    var audio = new Audio('vosound/경상북도/영주.mp3');
+    audio.play();
+   }else if(locations[47][0] == location){
+    var audio = new Audio('vosound/경상북도/예천.mp3');
+    audio.play();                 //경상북도
+   }else if(locations[48][0] == location){
+    var audio = new Audio('vosound/전라남도/광양.mp3');
+    audio.play();
+   }else if(locations[49][0] == location){
+    var audio = new Audio('vosound/전라남도/여수.mp3');
+    audio.play();
+   }else if(locations[50][0] == location){
+    var audio = new Audio('vosound/전라남도/순천.mp3');
+    audio.play();
+   }else if(locations[51][0] == location){
+    var audio = new Audio('vosound/전라남도/구례.mp3');
+    audio.play();
+   }else if(locations[52][0] == location){
+    var audio = new Audio('vosound/전라남도/곡성.mp3');
+    audio.play();
+   }else if(locations[53][0] == location){
+    var audio = new Audio('vosound/전라남도/고흥.mp3');
+    audio.play();
+   }else if(locations[54][0] == location){
+    var audio = new Audio('vosound/전라남도/보성.mp3');
+    audio.play();
+   }else if(locations[55][0] == location){
+    var audio = new Audio('vosound/전라남도/화순.mp3');
+    audio.play();
+   }else if(locations[56][0] == location){
+    var audio = new Audio('vosound/전라남도/장흥.mp3');
+    audio.play();
+   }else if(locations[57][0] == location){
+    var audio = new Audio('vosound/전라남도/강진.mp3');
+    audio.play();
+   }else if(locations[58][0] == location){
+    var audio = new Audio('vosound/전라남도/완도.mp3');
+    audio.play();
+   }else if(locations[59][0] == location){
+    var audio = new Audio('vosound/전라남도/해남.mp3');
+    audio.play();
+   }else if(locations[60][0] == location){
+    var audio = new Audio('vosound/전라남도/진도.mp3');
+    audio.play();
+   }else if(locations[61][0] == location){
+    var audio = new Audio('vosound/전라남도/목포.mp3');
+    audio.play();
+   }else if(locations[62][0] == location){
+    var audio = new Audio('vosound/전라남도/신안.mp3');
+    audio.play();
+   }else if(locations[53][0] == location){
+    var audio = new Audio('vosound/전라남도/무안.mp3');
+    audio.play();
+   }else if(locations[54][0] == location){
+    var audio = new Audio('vosound/전라남도/영암.mp3');
+    audio.play();
+   }else if(locations[55][0] == location){
+    var audio = new Audio('vosound/전라남도/나주.mp3');
+    audio.play();
+   }else if(locations[56][0] == location){
+    var audio = new Audio('vosound/전라남도/함평.mp3');
+    audio.play();
+   }else if(locations[57][0] == location){
+    var audio = new Audio('vosound/전라남도/영광.mp3');
+    audio.play();
+   }else if(locations[58][0] == location){
+    var audio = new Audio('vosound/전라남도/장성.mp3');
+    audio.play();
+   }else if(locations[59][0] == location){
+    var audio = new Audio('vosound/전라남도/담양.mp3');
+    audio.play();                      //전라남도
+   }else if(locations[60][0] == location){
+    var audio = new Audio('vosound/전라북도/무주.mp3');
+    audio.play();                    
+   }else if(locations[61][0] == location){
+    var audio = new Audio('vosound/전라북도/진안.mp3');
+    audio.play();                    
+   }else if(locations[62][0] == location){
+    var audio = new Audio('vosound/전라북도/장수.mp3');
+    audio.play();                    
+   }else if(locations[63][0] == location){
+    var audio = new Audio('vosound/전라북도/남원.mp3');
+    audio.play();                    
+   }else if(locations[64][0] == location){
+    var audio = new Audio('vosound/전라북도/순창.mp3');
+    audio.play();                    
+   }else if(locations[65][0] == location){
+    var audio = new Audio('vosound/전라북도/임실.mp3');
+    audio.play();                    
+   }else if(locations[66][0] == location){
+    var audio = new Audio('vosound/전라북도/정읍.mp3');
+    audio.play();                    
+   }else if(locations[67][0] == location){
+    var audio = new Audio('vosound/전라북도/고창.mp3');
+    audio.play();                    
+   }else if(locations[68][0] == location){
+    var audio = new Audio('vosound/전라북도/부안.mp3');
+    audio.play();                    
+   }else if(locations[69][0] == location){
+    var audio = new Audio('vosound/전라북도/남원.mp3');
+    audio.play();                    
+   }else if(locations[70][0] == location){
+    var audio = new Audio('vosound/전라북도/군산.mp3');
+    audio.play();                    
+   }else if(locations[71][0] == location){
+    var audio = new Audio('vosound/전라북도/익산.mp3');
+    audio.play();                    
+   }else if(locations[72][0] == location){
+    var audio = new Audio('vosound/전라북도/전주.mp3');
+    audio.play();                    
+   }else if(locations[73][0] == location){
+    var audio = new Audio('vosound/전라북도/완주.mp3');
+    audio.play();                    //전라북도
+   }else if(locations[74][0] == location){
+    var audio = new Audio('vosound/충청남도/천안.mp3');
+    audio.play();                    
+   }else if(locations[75][0] == location){
+    var audio = new Audio('vosound/충청남도/아산.mp3');
+    audio.play();                    
+   }else if(locations[76][0] == location){
+    var audio = new Audio('vosound/충청남도/당진.mp3');
+    audio.play();                    
+   }else if(locations[77][0] == location){
+    var audio = new Audio('vosound/충청남도/태안.mp3');
+    audio.play();                    
+   }else if(locations[78][0] == location){
+    var audio = new Audio('vosound/충청남도/서산.mp3');
+    audio.play();                    
+   }else if(locations[79][0] == location){
+    var audio = new Audio('vosound/충청남도/예산.mp3');
+    audio.play();                    
+   }else if(locations[80][0] == location){
+    var audio = new Audio('vosound/충청남도/홍성.mp3');
+    audio.play();                    
+   }else if(locations[81][0] == location){
+    var audio = new Audio('vosound/충청남도/보령.mp3');
+    audio.play();                    
+   }else if(locations[82][0] == location){
+    var audio = new Audio('vosound/충청남도/청양.mp3');
+    audio.play();                    
+   }else if(locations[83][0] == location){
+    var audio = new Audio('vosound/충청남도/서천.mp3');
+    audio.play();                    
+   }else if(locations[84][0] == location){
+    var audio = new Audio('vosound/충청남도/부여.mp3');
+    audio.play();                    
+   }else if(locations[85][0] == location){
+    var audio = new Audio('vosound/충청남도/공주.mp3');
+    audio.play();                    
+   }else if(locations[86][0] == location){
+    var audio = new Audio('vosound/충청남도/계룡.mp3');
+    audio.play();                    
+   }else if(locations[87][0] == location){
+    var audio = new Audio('vosound/충청남도/논산.mp3');
+    audio.play();                    
+   }else if(locations[88][0] == location){
+    var audio = new Audio('vosound/충청남도/금산.mp3');
+    audio.play();               //충청남도             
+   }else if(locations[89][0] == location){
+    var audio = new Audio('vosound/충청북도/영동.mp3');
+    audio.play();                    
+   }else if(locations[90][0] == location){
+    var audio = new Audio('vosound/충청북도/옥천.mp3');
+    audio.play();                    
+   }else if(locations[91][0] == location){
+    var audio = new Audio('vosound/충청북도/보은.mp3');
+    audio.play();                    
+   }else if(locations[92][0] == location){
+    var audio = new Audio('vosound/충청북도/청주.mp3');
+    audio.play();                    
+   }else if(locations[93][0] == location){
+    var audio = new Audio('vosound/충청북도/증평.mp3');
+    audio.play();                    
+   }else if(locations[94][0] == location){
+    var audio = new Audio('vosound/충청북도/괴산.mp3');
+    audio.play();                    
+   }else if(locations[95][0] == location){
+    var audio = new Audio('vosound/충청북도/증평.mp3');
+    audio.play();                    
+   }else if(locations[96][0] == location){
+    var audio = new Audio('vosound/충청북도/진천.mp3');
+    audio.play();                    
+   }else if(locations[97][0] == location){
+    var audio = new Audio('vosound/충청북도/음성.mp3');
+    audio.play();                    
+   }else if(locations[98][0] == location){
+    var audio = new Audio('vosound/충청북도/충주.mp3');
+    audio.play();                    
+   }else if(locations[99][0] == location){
+    var audio = new Audio('vosound/충청북도/제천.mp3');
+    audio.play();                    
+   }else if(locations[100][0] == location){
+    var audio = new Audio('vosound/충청북도/단양.mp3');
+    audio.play();                         //충청북도
+   }else if(locations[101][0] == location){
+    var audio = new Audio('vosound/강원도/태백.mp3');
+    audio.play();                    
+   }else if(locations[102][0] == location){
+    var audio = new Audio('vosound/강원도/삼척.mp3');
+    audio.play();                    
+   }else if(locations[103][0] == location){
+    var audio = new Audio('vosound/강원도/동해.mp3');
+    audio.play();                    
+   }else if(locations[104][0] == location){
+    var audio = new Audio('vosound/강원도/정선.mp3');
+    audio.play();                    
+   }else if(locations[105][0] == location){
+    var audio = new Audio('vosound/강원도/영월.mp3');
+    audio.play();                    
+   }else if(locations[106][0] == location){
+    var audio = new Audio('vosound/강원도/평창.mp3');
+    audio.play();                    
+   }else if(locations[107][0] == location){
+    var audio = new Audio('vosound/강원도/원주.mp3');
+    audio.play();                    
+   }else if(locations[108][0] == location){
+    var audio = new Audio('vosound/강원도/횡성.mp3');
+    audio.play();                    
+   }else if(locations[109][0] == location){
+    var audio = new Audio('vosound/강원도/강릉.mp3');
+    audio.play();                    
+   }else if(locations[110][0] == location){
+    var audio = new Audio('vosound/강원도/홍천.mp3');
+    audio.play();                    
+   }else if(locations[111][0] == location){
+    var audio = new Audio('vosound/강원도/춘천.mp3');
+    audio.play();                    
+   }else if(locations[112][0] == location){
+    var audio = new Audio('vosound/강원도/화천.mp3');
+    audio.play();                    
+   }else if(locations[113][0] == location){
+    var audio = new Audio('vosound/강원도/철원.mp3');
+    audio.play();                    
+   }else if(locations[114][0] == location){
+    var audio = new Audio('vosound/강원도/양구.mp3');
+    audio.play();                    
+   }else if(locations[115][0] == location){
+    var audio = new Audio('vosound/강원도/인제.mp3');
+    audio.play();                    
+   }else if(locations[116][0] == location){
+    var audio = new Audio('vosound/강원도/고성.mp3');
+    audio.play();                    
+   }else if(locations[117][0] == location){
+    var audio = new Audio('vosound/강원도/속초.mp3');
+    audio.play();                    
+   }else if(locations[118][0] == location){
+    var audio = new Audio('vosound/강원도/양양.mp3');
+    audio.play();                        //강원도
+   }else if(locations[119][0] == location){
+    var audio = new Audio('vosound/경기도/평택.mp3');
+    audio.play();                    
+   }else if(locations[120][0] == location){
+    var audio = new Audio('vosound/경기도/안성.mp3');
+    audio.play();                    
+   }else if(locations[121][0] == location){
+    var audio = new Audio('vosound/경기도/여주.mp3');
+    audio.play();                    
+   }else if(locations[122][0] == location){
+    var audio = new Audio('vosound/경기도/이천.mp3');
+    audio.play();                    
+   }else if(locations[123][0] == location){
+    var audio = new Audio('vosound/경기도/용인.mp3');
+    audio.play();                    
+   }else if(locations[124][0] == location){
+    var audio = new Audio('vosound/경기도/오산.mp3');
+    audio.play();                    
+   }else if(locations[125][0] == location){
+    var audio = new Audio('vosound/경기도/화성.mp3');
+    audio.play();                    
+   }else if(locations[126][0] == location){
+    var audio = new Audio('vosound/경기도/안산.mp3');
+    audio.play();                    
+   }else if(locations[127][0] == location){
+    var audio = new Audio('vosound/경기도/수원.mp3');
+    audio.play();                    
+   }else if(locations[128][0] == location){
+    var audio = new Audio('vosound/경기도/군포.mp3');
+    audio.play();                    
+   }else if(locations[129][0] == location){
+    var audio = new Audio('vosound/경기도/시흥.mp3');
+    audio.play();                    
+   }else if(locations[130][0] == location){
+    var audio = new Audio('vosound/경기도/부천.mp3');
+    audio.play();                    
+   }else if(locations[131][0] == location){
+    var audio = new Audio('vosound/경기도/광명.mp3');
+    audio.play();                    
+   }else if(locations[132][0] == location){
+    var audio = new Audio('vosound/경기도/안양.mp3');
+    audio.play();                    
+   }else if(locations[133][0] == location){
+    var audio = new Audio('vosound/경기도/의왕.mp3');
+    audio.play();                    
+   }else if(locations[134][0] == location){
+    var audio = new Audio('vosound/경기도/과천.mp3');
+    audio.play();                    
+   }else if(locations[135][0] == location){
+    var audio = new Audio('vosound/경기도/광주.mp3');
+    audio.play();                    
+   }else if(locations[136][0] == location){
+    var audio = new Audio('vosound/경기도/성남.mp3');
+    audio.play();                    
+   }else if(locations[137][0] == location){
+    var audio = new Audio('vosound/경기도/하남.mp3');
+    audio.play();                    
+   }else if(locations[138][0] == location){
+    var audio = new Audio('vosound/경기도/구리.mp3');
+    audio.play();                    
+   }else if(locations[139][0] == location){
+    var audio = new Audio('vosound/경기도/양평.mp3');
+    audio.play();                    
+   }else if(locations[140][0] == location){
+    var audio = new Audio('vosound/경기도/가평.mp3');
+    audio.play();                    
+   }else if(locations[141][0] == location){
+    var audio = new Audio('vosound/경기도/포천.mp3');
+    audio.play();                    
+   }else if(locations[142][0] == location){
+    var audio = new Audio('vosound/경기도/연천.mp3');
+    audio.play();                    
+   }else if(locations[143][0] == location){
+    var audio = new Audio('vosound/경기도/양주.mp3');
+    audio.play();                    
+   }else if(locations[144][0] == location){
+    var audio = new Audio('vosound/경기도/파주.mp3');
+    audio.play();                    
+   }else if(locations[145][0] == location){
+    var audio = new Audio('vosound/경기도/고양.mp3');
+    audio.play();                    
+   }else if(locations[146][0] == location){
+    var audio = new Audio('vosound/경기도/김포.mp3');
+    audio.play();                    
+   }else if(locations[147][0] == location){
+    var audio = new Audio('vosound/경기도/남양주.mp3');
+    audio.play();                    
+   }else if(locations[148][0] == location){
+    var audio = new Audio('vosound/경기도/의정부.mp3');
+    audio.play();                    
+   }else if(locations[149][0] == location){
+    var audio = new Audio('vosound/경기도/동두천.mp3');
+    audio.play();                             //경기도            
+   }else if(locations[150][0] == location){
+    var audio = new Audio('vosound/제주도/서귀포.mp3');
+    audio.play();                    
+   }else if(locations[151][0] == location){
+    var audio = new Audio('vosound/제주도/제주.mp3');
+    audio.play();                             //제주도         
+   }                           
+}
 
-   zoom: 12,
-
-   center: new google.maps.LatLng(35.143874, 129.010651),
-
-   mapTypeId: google.maps.MapTypeId.ROADMAP
-
- });
-
-
-
- var infowindow = new google.maps.InfoWindow();
-
-
-
- var marker, i;
-
- for (i = 0; i < locations.length; i++) {  
-
-   marker = new google.maps.Marker({
-
-     id:i,
-
-     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-
-     map: map
-
-   });   
- }
+ 
