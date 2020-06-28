@@ -5,16 +5,23 @@
   <title>P.A.C Project Map Page</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDi2pozzCc0-8R8DE3af9C9cmI5okVztjY" ></script>
-  <script type="text/javascript" src="mapp.js"></script>
+  <script type="text/javascript" src="js/mapp.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+  <script type="text/javascript" src="js/location.js"></script>
+
   <style>
     #map_ma {width:97%; height:650px; clear:both; border:solid 3px black;}
   </style>
-  <script type="text/javascript" src="mapp.js">
-  </script>
 </head>
 <body>
   <div id="map_ma"></div>
   <script  src="js/map.js"></script>
+
+  <input type="text" id="getl" value="">
+  <button onclick="getlocations()">지역 이용</button>
+  <div id="map_ma"></div>
+  <script src="js/map.js"></script>
+  <a href="js/location.js"><button>현재위치 가지고 오기</button></a>
   
   </body>
 </html>
