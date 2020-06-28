@@ -180,10 +180,67 @@ var locations = [
    ['제주', 33.499299, 126.513027],
  ];
 
+ var global_var;
+
+ function getlocations(){
+  
+  var i = 0;
+  while(global_var){
+    if(locations[i][0] == global_var){
+     var X_point = locations[i][1];
+     var Y_point = locations[i][2];
+     break;
+    }
+    i++;
+  }
+
+  var zoomLevel		= 15;				// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+  var markerMaxWidth	= 200;
+
+  var myLatlng = new google.maps.LatLng(X_point, Y_point);
+
+  var mapOptions = {
+        zoom: zoomLevel,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+   var map = new google.maps.Map(document.getElementById('map_ma'), mapOptions);
+}
+var ti = document.getElementById("ibtn")
+ti.addListener('click', function(e){
+  var X_point;
+  var Y_point;
+  var i = 0;
+  while(globla_var){
+    if(locations[i][0] == global_var){
+     X_point = locations[i][1];
+     Y_point = locations[i][2];
+     break;
+    }
+    i++;
+  }
+
+  var zoomLevel		= 15;		
+  var markerMaxWidth	= 200;
+
+  var myLatlng = new google.maps.LatLng(X_point, Y_point);
+
+  var mapOptions = {
+        zoom: zoomLevel,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+   var map = new google.maps.Map(document.getElementById('map_ma'), mapOptions);
+})
+
  function foundlocation(){
    var locatione = document.getElementById("search_box").value;
    console.log(locatione);
-
+   global_var = document.getElementById("search_box").value;
+   console.log(global_var);
+   
     if(locations[0][0] == locatione){
       var audio = new Audio('vosound/대표시/부산.mp3');
       audio.play();
