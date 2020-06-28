@@ -11,15 +11,15 @@
   <script type="text/javascript" src="js/location.js"></script>
 
   <style>
-    #map_ma {width:97%; height:650px; clear:both; border:solid 3px black;}
+    #map_ma {width:97%; height:600px; margin-top: 4%; clear:both; border:solid 3px black; }
   </style>
 
 </head>
 <body>
   <fieldset id="main_box2">
-    <input type="search" id="search_box2" list="location_list"
+    <input type="search" id="ibtn" list="location_list"
             placeholder=" ---지역을 입력하세요---">
-    <button id="ibtn" onclick="getlocations()">지역 재검색</button>
+    <button onclick="getlocations()" id="mainB1">재검색</button>
 
     <datalist id="location_list">
       <option value="강원도 강릉"></option>
@@ -195,13 +195,13 @@
       <option value="충청북도 충주"></option>
   </datalist>
 
-    <a href="rule_text.txt"><button>어린이 보호구역 관련 법률</button></a>
+    <a href="rule_text.txt"><button id="mainB2">법률</button></a>
   </fieldset>
 
   <div id="map_ma"></div>
   <script  src="js/map.js"></script>
 
-  <a href="js/location.js"><button>현재 위치 돌아가기</button></a>
+  <a href="js/location.js"><button id="mainB3">현재 위치로 돌아가기</button></a>
   
   </body>
 </html>
