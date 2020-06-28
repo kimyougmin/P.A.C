@@ -212,7 +212,7 @@ ti.addListener('click', function(e){
   var X_point;
   var Y_point;
   var i = 0;
-  while(globla_var){
+  while(global_var){
     if(locations[i][0] == global_var){
      X_point = locations[i][1];
      Y_point = locations[i][2];
