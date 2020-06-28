@@ -180,80 +180,25 @@ var locations = [
    ['제주', 33.499299, 126.513027],
  ];
 
- var global_var;
-
- function getlocations(){
-  
-  var i = 0;
-  while(global_var){
-    if(locations[i][0] == global_var){
-     var X_point = locations[i][1];
-     var Y_point = locations[i][2];
-     break;
-    }
-    i++;
-  }
-
-  var zoomLevel		= 15;				// 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
-  var markerMaxWidth	= 200;
-
-  var myLatlng = new google.maps.LatLng(X_point, Y_point);
-
-  var mapOptions = {
-        zoom: zoomLevel,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
-
-   var map = new google.maps.Map(document.getElementById('map_ma'), mapOptions);
+function f_data(get_lat, get_lng){
+   localStorage.lat = get_lat;
+   localStorage.lng = get_lng;
 }
-var ti = document.getElementById("ibtn")
-ti.addListener('click', function(e){
-  var X_point;
-  var Y_point;
-  var i = 0;
-  while(global_var){
-    if(locations[i][0] == global_var){
-     X_point = locations[i][1];
-     Y_point = locations[i][2];
-     break;
-    }
-    i++;
-  }
 
-  var zoomLevel		= 15;		
-  var markerMaxWidth	= 200;
-
-  var myLatlng = new google.maps.LatLng(X_point, Y_point);
-
-  var mapOptions = {
-        zoom: zoomLevel,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
-
-   var map = new google.maps.Map(document.getElementById('map_ma'), mapOptions);
-})
 
  function foundlocation(){
    var locatione = document.getElementById("search_box").value;
    console.log(locatione);
    global_var = document.getElementById("search_box").value;
    console.log(global_var);
-   
+
     if(locations[0][0] == locatione){
       var audio = new Audio('vosound/대표시/부산.mp3');
       audio.play();
       setTimeout(function(){
         location.href="main.html";
-        }, 3300);
-        
-      }else if(locations[1][0] == locatione){
-        var audio = new Audio('vosound/대표시/대구.mp3');
-        audio.play();
-        setTimeout(function(){
-          location.href="main.html";
-          }, 3300);
+      }, 3300);
+      f_data(locations[0][1],locations[0][2])
 
       }else if(locations[1][0] == locatione){
         var audio = new Audio('vosound/대표시/대구.mp3');
@@ -261,14 +206,21 @@ ti.addListener('click', function(e){
         setTimeout(function(){
           location.href="main.html";
           }, 3300);
-
+      f_data(locations[1][1],locations[1][2])
+      }else if(locations[1][0] == locatione){
+        var audio = new Audio('vosound/대표시/대구.mp3');
+        audio.play();
+        setTimeout(function(){
+          location.href="main.html";
+          }, 3300);
+          f_data(locations[2][1],locations[2][2])
       }else if(locations[2][0] == locatione){
         var audio = new Audio('vosound/대표시/울산.mp3');
         audio.play();
         setTimeout(function(){
           location.href="main.html";
           }, 3300);
-
+          f_data(locations[3][1],locations[3][2])
       }else if(locations[3][0] == locatione){
         var audio = new Audio('vosound/대표시/광주.mp3');
         audio.play();
@@ -456,7 +408,7 @@ ti.addListener('click', function(e){
         setTimeout(function(){
           location.href="main.html";
           }, 3300);
-          
+
       }else if(locations[30][0] == locatione){
         var audio = new Audio('vosound/경상북도/포항.mp3');
         audio.play();
@@ -1379,6 +1331,6 @@ ti.addListener('click', function(e){
         audio.play();
         setTimeout(function(){
           location.href="main.html";
-          }, 3300);                             //제주도         
-      } 
+          }, 3300);                             //제주도
+      }
     }

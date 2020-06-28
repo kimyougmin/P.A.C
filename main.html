@@ -16,10 +16,12 @@
 
 </head>
 <body>
+  <div id="map_ma"></div>
+  <script src="js/map.js"></script>
   <fieldset id="main_box2">
-    <input type="search" id="ibtn" list="location_list"
+    <input type="search" id="research_input" list="location_list"
             placeholder=" ---지역을 입력하세요---">
-    <button onclick="getlocations()" id="mainB1">재검색</button>
+    <button onclick="getlocations()" id="researchbtn">재검색</button>
 
     <datalist id="location_list">
       <option value="강원도 강릉"></option>
@@ -198,10 +200,9 @@
     <a href="rule_text.txt"><button id="mainB2">법률</button></a>
   </fieldset>
 
-  <div id="map_ma"></div>
-  <script  src="js/map.js"></script>
+
 
   <a href="js/location.js"><button id="mainB3">현재 위치로 돌아가기</button></a>
-  
+
   </body>
 </html>

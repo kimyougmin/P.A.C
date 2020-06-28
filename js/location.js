@@ -51,7 +51,7 @@ function GetSchoolLatLng(map){
        const infoWindow = new google.maps.InfoWindow(
                          {
                            content: `<div><h3>${schoolZone.name}</h3></div>`,
-                           maxWizzzdth: markerMaxWidth
+                           maxWizzzdth: 200
                          }
        );
 
