@@ -1382,5 +1382,3 @@ ti.addListener('click', function(e){
           }, 3300);                             //제주도         
       } 
     }
-  
-  
