@@ -13,11 +13,28 @@
   <style>
     #map_ma {width:97%; height:622px; margin-top: 1%; clear:both; border:solid 3px black; }
   </style>
+  
+  <script type="text/javascript">
+    var bDisplay = true;
+    function doDisplay(){
+      var con = document.getElementById("myDIV");
+      if (con.style.display=='none'){
+          con.style.display = 'block';
+      }
+      else{
+          con.style.display = 'none';
+      }
+    }
+  </script>
 
 </head>
 <body>
   <h1>&nbsp &nbsp 더블클릭으로 스쿨존을 확인하세요
-  <a href="rule_text.txt"><button id="rule_id">법률</button></a></h1>
+  <a href="javascript:doDisplay()"><button id="rule_id">법률 숨기기 / 다시 보기</button></a></h1>
+
+  <div id="myDIV">
+    <embed src="rule_text.txt" type="" id="rule_text">
+  </div>
 
   <div id="map_ma"></div>
   <script src="js/map.js"></script>

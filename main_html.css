@@ -1,7 +1,9 @@
 body {background: linear-gradient(to bottom, white, rgb(103, 197, 65));}
 
+#rule_text {width: 96%; margin-left: 3%;}
+
 #rule_id {
-    width: 80px;
+    width: 230px;
     height: 25px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
@@ -17,7 +19,7 @@ body {background: linear-gradient(to bottom, white, rgb(103, 197, 65));}
     outline: none;
     position: fixed;
     margin-top: 0.5%;
-    margin-left: 50%;
+    margin-left: 35%;
     }
 
 #rule_id:hover {
