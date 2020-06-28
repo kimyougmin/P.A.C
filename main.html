@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="main_html.css">
   <title>P.A.C Project Map Page</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDi2pozzCc0-8R8DE3af9C9cmI5okVztjY" ></script>
@@ -12,16 +13,195 @@
   <style>
     #map_ma {width:97%; height:650px; clear:both; border:solid 3px black;}
   </style>
+
 </head>
 <body>
-  <input type="text" id="getl" value="">
-  <button onclick="getlocations()">지역 이용</button>
-  <a href="rule_text.txt"><button>어린이 보호구역 관련 법률</button></a>
+  <fieldset id="main_box2">
+    <input type="search" id="search_box2" list="location_list"
+            placeholder=" ---지역을 입력하세요---">
+    <button id="ibtn" onclick="getlocations()">지역 재검색</button>
+
+    <datalist id="location_list">
+      <option value="강원도 강릉"></option>
+      <option value="강원도 고성"></option>
+      <option value="강원도 동해"></option>
+      <option value="강원도 삼척"></option>
+      <option value="강원도 속초"></option>
+      <option value="강원도 양구"></option>
+      <option value="강원도 양양"></option>
+      <option value="강원도 영월"></option>
+      <option value="강원도 원주"></option>
+      <option value="강원도 인제"></option>
+      <option value="강원도 정선"></option>
+      <option value="강원도 철원"></option>
+      <option value="강원도 춘천"></option>
+      <option value="강원도 태백"></option>
+      <option value="강원도 평창"></option>
+      <option value="강원도 홍천"></option>
+      <option value="강원도 화천"></option>
+      <option value="강원도 횡성"></option>
+
+      <option value="광주광역시"></option>
+
+      <option value="경기도 가평"></option>
+      <option value="경기도 고양"></option>
+      <option value="경기도 과천"></option>
+      <option value="경기도 광명"></option>
+      <option value="경기도 광주"></option>
+      <option value="경기도 구리"></option>
+      <option value="경기도 군포"></option>
+      <option value="경기도 김포"></option>
+      <option value="경기도 남양주"></option>
+      <option value="경기도 동두천"></option>
+      <option value="경기도 부천"></option>
+      <option value="경기도 성남"></option>
+      <option value="경기도 수원"></option>
+      <option value="경기도 시흥"></option>
+      <option value="경기도 안산"></option>
+      <option value="경기도 안성"></option>
+      <option value="경기도 안양"></option>
+      <option value="경기도 양주"></option>
+      <option value="경기도 양평"></option>
+      <option value="경기도 여주"></option>
+      <option value="경기도 연천"></option>
+      <option value="경기도 오산"></option>
+      <option value="경기도 용인"></option>
+      <option value="경기도 의왕"></option>
+      <option value="경기도 의정부"></option>
+      <option value="경기도 이천"></option>
+      <option value="경기도 파주"></option>
+      <option value="경기도 평택"></option>
+      <option value="경기도 포천"></option>
+      <option value="경기도 하남"></option>
+      <option value="경기도 화성"></option>
+
+      <option value="경상남도 거제"></option>
+      <option value="경상남도 거창"></option>
+      <option value="경상남도 고성"></option>
+      <option value="경상남도 김해"></option>
+      <option value="경상남도 남해"></option>
+      <option value="경상남도 밀양"></option>
+      <option value="경상남도 사천"></option>
+      <option value="경상남도 산청"></option>
+      <option value="경상남도 양산"></option>
+      <option value="경상남도 의령"></option>
+      <option value="경상남도 진주"></option>
+      <option value="경상남도 창녕"></option>
+      <option value="경상남도 창원"></option>
+      <option value="경상남도 통영"></option>
+      <option value="경상남도 하동"></option>
+      <option value="경상남도 함안"></option>
+      <option value="경상남도 함양"></option>
+      <option value="경상남도 합천"></option>
+
+      <option value="경상북도 경산"></option>
+      <option value="경상북도 경주"></option>
+      <option value="경상북도 고령"></option>
+      <option value="경상북도 구미"></option>
+      <option value="경상북도 군위"></option>
+      <option value="경상북도 김천"></option>
+      <option value="경상북도 문경"></option>
+      <option value="경상북도 봉화"></option>
+      <option value="경상북도 상주"></option>
+      <option value="경상북도 성주"></option>
+      <option value="경상북도 안동"></option>
+      <option value="경상북도 영덕"></option>
+      <option value="경상북도 영양"></option>
+      <option value="경상북도 영주"></option>
+      <option value="경상북도 영천"></option>
+      <option value="경상북도 예천"></option>
+      <option value="경상북도 울진"></option>
+      <option value="경상북도 의성"></option>
+      <option value="경상북도 청도"></option>
+      <option value="경상북도 청송"></option>
+      <option value="경상북도 칠곡"></option>
+      <option value="경상북도 포항"></option>
+
+      <option value="대구광역시"></option>
+      <option value="대전광역시"></option>
+      <option value="부산광역시"></option>
+      <option value="서울특별시"></option>
+      <option value="세종특별자치시"></option>
+      <option value="울산광역시"></option>
+      <option value="인천광역시"></option>
+
+      <option value="전라남도 강진"></option>
+      <option value="전라남도 고흥"></option>
+      <option value="전라남도 곡성"></option>
+      <option value="전라남도 광양"></option>
+      <option value="전라남도 구례"></option>
+      <option value="전라남도 나주"></option>
+      <option value="전라남도 담양"></option>
+      <option value="전라남도 목포"></option>
+      <option value="전라남도 무안"></option>
+      <option value="전라남도 보성"></option>
+      <option value="전라남도 순천"></option>
+      <option value="전라남도 신안"></option>
+      <option value="전라남도 여수"></option>
+      <option value="전라남도 영광"></option>
+      <option value="전라남도 영암"></option>
+      <option value="전라남도 완도"></option>
+      <option value="전라남도 장성"></option>
+      <option value="전라남도 장흥"></option>
+      <option value="전라남도 진도"></option>
+      <option value="전라남도 함평"></option>
+      <option value="전라남도 해남"></option>
+      <option value="전라남도 화순"></option>
+
+      <option value="전라북도 고창"></option>
+      <option value="전라북도 군산"></option>
+      <option value="전라북도 김제"></option>
+      <option value="전라북도 남원"></option>
+      <option value="전라북도 무주"></option>
+      <option value="전라북도 부안"></option>
+      <option value="전라북도 순창"></option>
+      <option value="전라북도 완주"></option>
+      <option value="전라북도 익산"></option>
+      <option value="전라북도 임실"></option>
+      <option value="전라북도 장수"></option>
+      <option value="전라북도 정읍"></option>
+      <option value="전라북도 진안"></option>
+
+      <option value="제주"></option>
+      <option value="제주 서귀포"></option>
+
+      <option value="충청남도 계룡"></option>
+      <option value="충청남도 공주"></option>
+      <option value="충청남도 금산"></option>
+      <option value="충청남도 논산"></option>
+      <option value="충청남도 당진"></option>
+      <option value="충청남도 보령"></option>
+      <option value="충청남도 부여"></option>
+      <option value="충청남도 서산"></option>
+      <option value="충청남도 서천"></option>
+      <option value="충청남도 아산"></option>
+      <option value="충청남도 예산"></option>
+      <option value="충청남도 천안"></option>
+      <option value="충청남도 청양"></option>
+      <option value="충청남도 태안"></option>
+      <option value="충청남도 홍성"></option>
+
+      <option value="충청북도 괴산"></option>
+      <option value="충청북도 단양"></option>
+      <option value="충청북도 보은"></option>
+      <option value="충청북도 영동"></option>
+      <option value="충청북도 옥천"></option>
+      <option value="충청북도 음성"></option>
+      <option value="충청북도 제천"></option>
+      <option value="충청북도 증평"></option>
+      <option value="충청북도 진천"></option>
+      <option value="충청북도 청원"></option>
+      <option value="충청북도 청주"></option>
+      <option value="충청북도 충주"></option>
+  </datalist>
+
+    <a href="rule_text.txt"><button>어린이 보호구역 관련 법률</button></a>
+  </fieldset>
 
   <div id="map_ma"></div>
   <script  src="js/map.js"></script>
 
-  <a href="js/location.js"><button>현재위치 가지고 오기</button></a>
+  <a href="js/location.js"><button>현재 위치 돌아가기</button></a>
   
   </body>
 </html>
